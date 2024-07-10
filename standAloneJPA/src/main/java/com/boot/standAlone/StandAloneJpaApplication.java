@@ -85,10 +85,21 @@ public class StandAloneJpaApplication {
 		*/
 		
 		/* testing for custom finder method created in userRepository */
-		
+		/*
 		List<User> byNameAndCity = userRepository.findByNameAndCity("Adarsh Tiwari", "Jaunpur");
 		byNameAndCity.forEach(f->System.out.println(f));
+		*/
 		
+		
+		/* testing JPQL integrated method */
+		List<User> userByName = userRepository.getUserByName("Adarsh Tiwari");
+		userByName.forEach(e->System.out.println(e));
+		System.out.println("successfully tested for jpql query based method");
+		
+		/* testing native query */
+		System.out.println("_____________________________________________________________________");
+		List<User> all = userRepository.getAll();
+		all.forEach(a->System.out.println(a));
 		
 		
 	}
