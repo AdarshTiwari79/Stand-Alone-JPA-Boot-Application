@@ -34,12 +34,12 @@ public class StandAloneJpaApplication {
 		user2.setStatus("marries");
 		
 		/* Inserting multiple users */
-		
+		/*
 		List<User> users = List.of(user,user2);
 		Iterable<User> result = userRepository.saveAll(users);
 		
 		result.forEach(e->System.out.println(e));
-		
+		*/
 		
 		/* selecting a single user */
 		/*
@@ -83,6 +83,11 @@ public class StandAloneJpaApplication {
 		userRepository.deleteAll(itr);
 		System.out.println("All the rows of user_details table gets deleted.");
 		*/
+		
+		/* testing for custom finder method created in userRepository */
+		
+		List<User> byNameAndCity = userRepository.findByNameAndCity("Adarsh Tiwari", "Jaunpur");
+		byNameAndCity.forEach(f->System.out.println(f));
 		
 		
 		
